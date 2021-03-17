@@ -1,0 +1,609 @@
+$gris: #5e5e5e;
+$gris_oscuro: #6e6e6e;
+* {
+    margin: 0;
+    padding: 0;
+    //hace que el tamaño no se pase del div padre
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+button {
+    background-color: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+//le saca el borde cuando haces click
+button:focus {
+    outline: none;
+}
+
+//_________________________________________________________________________________________________________________________________________
+//Escenciales
+.body_container {
+    background-color: black;
+    color: white;
+    // height: 500px;
+}
+
+.text_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+//precio horizontal, solo disponible en desktop
+.text_title_price {
+    display: none;
+}
+
+.article_structure {
+    .slideshow-container {
+        margin-bottom: 20%;
+    }
+}
+
+// Placeholder, sacar
+.article_container {
+    // height: 1000px;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+//_____________________________________________________________________________________________________________________________________________________
+//navbar
+.navbar {
+    z-index: 2000;
+    //cambiar
+    // position: sticky;
+    top: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    border-bottom: 1px solid white;
+    padding: 10px;
+}
+
+.navbar_cart {
+    display: flex;
+    align-items: center;
+    h4 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+}
+
+$icon_width: 35px;
+.navbar_icon {
+    width: $icon_width;
+    color: white;
+    fill: white;
+}
+
+.navbar_icon_2 {
+    //esto se hace debido a que el 3 bars es un poco mas grande
+    width: $icon_width + 5px;
+    color: white;
+    fill: white;
+}
+
+.navbar_logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat";
+    font-size: .6rem;
+}
+
+//______________________________________________________________________________________________________________________________________________________
+//aside
+#article_aside {
+    position: fixed;
+    z-index: 1000;
+    height: 100%;
+    // left: -500px;
+    width: 75%;
+    background-color: red;
+}
+
+//este es ul
+.aside_list {
+    //margin arriba
+    margin: 12% 0 0 0;
+    list-style: none;
+    height: 100%;
+    li {
+        //que cada uno ocupe solo 10 %
+        height: 10%;
+        display: flex;
+        align-items: center;
+        border-top: 2px solid white;
+        //margen a la derecha
+        margin: 0 10% 0 0;
+        a {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: white;
+            //margen a la izquierda
+            margin: 0 0 0 10%;
+        }
+    }
+    //para darle al ultimo li el border bottom
+    & li:last-child {
+        border-bottom: 2px solid white;
+    }
+}
+
+.aside_hidden {
+    transition: .4s;
+    left: -500px;
+}
+
+.aside_shown {
+    transition: .4s;
+    left: 0;
+}
+
+//______________________________________________________________________________________________________________________________________________________
+//article text
+.article_text {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 5%;
+    // si no lo hago asi el background-color se corre
+    padding-top: 5%;
+    .text_title,
+    .text_description {
+        margin-bottom: 20px;
+    }
+}
+
+.text_title {
+    font-size: 2rem;
+}
+
+.text_description {
+    color: gray;
+    font-size: .8rem;
+}
+
+.text_price {
+    font-size: 1.5rem;
+}
+
+.text_description_extra {
+    display: none;
+}
+
+//______________________________________________________________________________________________________________________________________________________
+//checkbox
+.option_checkbox:focus {
+    outline: none;
+}
+
+input[type=checkbox]+label {
+    display: block;
+    // margin: 0.2em;
+    // padding: 0.2em;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]+label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    // border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+input[type=checkbox]+label:active:before {
+    transform: scale(0);
+}
+
+input[type=checkbox]:checked+label:before {
+    // background-color: blue;
+    background-color: #3498db;
+    // border-color: lightblue;
+    color: #fff;
+}
+
+input[type=checkbox]:disabled+label:before {
+    transform: scale(1);
+    border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled+label:before {
+    transform: scale(1);
+    background-color: #bfb;
+    border-color: #bfb;
+}
+
+//______________________________________________________________________________________________________________________________________________________
+//Carrousel
+.slideshow-container {
+    width: 80%;
+    margin: auto;
+}
+
+
+/* Hide the images by default */
+
+.mySlides {
+    display: block;
+}
+
+.slides_hidden {
+    display: none;
+}
+
+
+/* Next & previous buttons */
+
+.slideshow_image_container {
+    position: relative;
+}
+
+.controls_container {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    // margin-top: -22px;
+    // padding: 16px;
+    // color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+// .prev,
+// .next {
+//     position: absolute;
+//     top: 50%;
+//     // left: 0;
+//     width: auto;
+// }
+// .next {
+//     right: 0;
+//     border-radius: 3px 0 0 3px;
+// }
+.dot_container {
+    text-align: center;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+#prev:hover,
+#next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carrousel_image {
+    width: 100%;
+}
+
+
+/* Caption text */
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: $gris_oscuro;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+
+/* .dot:hover */
+
+.dot_active {
+    /* background-color: #717171; */
+    background-color: white;
+}
+
+
+/* Fading animation */
+
+.fade {
+    /* -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s; */
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+
+/* @-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+} */
+
+@keyframes fade {
+    from {
+        opacity: .1
+    }
+    to {
+        opacity: 1
+    }
+}
+
+//_______________________________________________________________________________________________________________________________
+//dropdown menu
+.article_options_container {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+$mobile_display_width: 80%;
+.article_menu {
+    // width: $mobile_display_width;
+    border-radius: 5px;
+    /* necesario para el border radius..? */
+    //Si se activa no anda el sticky
+    // overflow: hidden;
+}
+
+.option_title {
+    font-size: 1.2rem;
+}
+
+.option_icon {
+    width: 30px;
+}
+
+.option_text {
+    font-size: 1.7rem;
+}
+
+.article_item {
+    border-top: 1px solid #2980b9;
+    overflow: hidden;
+}
+
+.item_btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background-color: #3498db;
+    color: white;
+}
+
+.item_options {
+    background: #333;
+    // background-color: blue;
+    overflow: hidden;
+    // transition: all 0.3s;
+    // max-height: 0;
+    &>li:active {
+        // transition: 1s;
+        background-color: $gris;
+    }
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 20px;
+    align-items: center;
+    // border-bottom: 2px solid white; 
+}
+
+.sabores_quantity {
+    // height: 50px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: $gris_oscuro;
+}
+
+.send_button {
+    border-radius: 500px;
+    border: none;
+    background-color: #3498db;
+    padding: 12px 20px;
+    margin: auto;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.send_button:disabled {
+    opacity: 50%;
+}
+
+.article_final {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .article_structure {
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        margin: 0 50px;
+    }
+    .article_options_container {
+        width: 50%;
+    }
+    .article_menu {
+        width: 50%;
+    }
+    .article_structure .slideshow-container {
+        margin-bottom: 0;
+    }
+    $icon_width: 25px;
+    .navbar_icon {
+        width: $icon_width;
+        color: white;
+        fill: white;
+    }
+    .navbar_icon_2 {
+        //esto se hace debido a que el 3 bars es un poco mas grande
+        width: $icon_width + 5px;
+        color: white;
+        fill: white;
+    }
+    .navbar {
+        justify-content: space-around;
+    }
+    //_________________________________________________________________________________________________________________
+    //slideshow
+    .slideshow-container {
+        width: 50%;
+        margin: 0;
+    }
+    //__________________________________________________________________________________________________________________
+    //text
+    .text_price {
+        width: fit-content;
+    }
+    .text_title {
+        .text_title_price {
+            display: block;
+        }
+    }
+    .text_price {
+        display: none;
+    }
+    .text_description_extra {
+        display: block;
+    }
+    //______________________________________________________________________________________________________________
+    //aside
+    #article_aside {
+        position: fixed;
+        z-index: 1000;
+        height: 100%;
+        // left: -500px;
+        width: 25%;
+        background-color: red;
+    }
+    .aside_hidden {
+        transition: .4s;
+        left: -2000px;
+    }
+    .aside_shown {
+        transition: .4s;
+        left: 0;
+    }
+    //________________________________________________________________________________________________________________
+    //desplegables
+    .article_options_container {
+        align-items: center;
+    }
+    .item_options {
+        max-height: 10em;
+    }
+    .article_menu li:first-child {
+        // margin-bottom: 100px;
+    }
+}
+
+//_____________________******************_______________________________________
+//clases para js
+.click_transition_expand {
+    transition: .4s;
+    width: 100%;
+}
+
+.click_transition_reduce {
+    transition: .4s;
+    width: $mobile_display_width;
+}
+
+.height_expand {
+    transition: max-height 3s;
+    max-height: 5000px;
+}
+
+.height_reduce {
+    transition: max-height 1s;
+    max-height: 0;
+}
+
+.text_hidden {
+    display: none;
+}
+
+.li_hidden {
+    display: none;
+}
+
+.icon_hidden {
+    display: none;
+}
+
+.sticky {
+    z-index: 5000;
+    top: 0;
+    position: sticky;
+}

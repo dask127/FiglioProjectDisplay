@@ -1,0 +1,602 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.body_container {
+  background-color: black;
+  color: white;
+}
+
+.text_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.text_title_price {
+  display: none;
+}
+
+.article_structure .slideshow-container {
+  margin-bottom: 20%;
+}
+
+.article_container {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.navbar {
+  z-index: 2000;
+  top: 0;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  border-bottom: 1px solid white;
+  padding: 10px;
+}
+
+.navbar_cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar_cart h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.navbar_icon {
+  width: 35px;
+  color: white;
+  fill: white;
+}
+
+.navbar_icon_2 {
+  width: 40px;
+  color: white;
+  fill: white;
+}
+
+.navbar_logo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Montserrat";
+  font-size: .6rem;
+}
+
+#article_aside {
+  position: fixed;
+  z-index: 1000;
+  height: 100%;
+  width: 75%;
+  background-color: red;
+}
+
+.aside_list {
+  margin: 12% 0 0 0;
+  list-style: none;
+  height: 100%;
+}
+
+.aside_list li {
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 2px solid white;
+  margin: 0 10% 0 0;
+}
+
+.aside_list li a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  margin: 0 0 0 10%;
+}
+
+.aside_list li:last-child {
+  border-bottom: 2px solid white;
+}
+
+.aside_hidden {
+  -webkit-transition: .4s;
+  transition: .4s;
+  left: -500px;
+}
+
+.aside_shown {
+  -webkit-transition: .4s;
+  transition: .4s;
+  left: 0;
+}
+
+.article_text {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 5%;
+  padding-top: 5%;
+}
+
+.article_text .text_title,
+.article_text .text_description {
+  margin-bottom: 20px;
+}
+
+.text_title {
+  font-size: 2rem;
+}
+
+.text_description {
+  color: gray;
+  font-size: .8rem;
+}
+
+.text_price {
+  font-size: 1.5rem;
+}
+
+.text_description_extra {
+  display: none;
+}
+
+.option_checkbox:focus {
+  outline: none;
+}
+
+input[type=checkbox] + label {
+  display: block;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: "\2714";
+  border: 0.1em solid #000;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input[type=checkbox] + label:active:before {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: #3498db;
+  color: #fff;
+}
+
+input[type=checkbox]:disabled + label:before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled + label:before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+
+.slideshow-container {
+  width: 80%;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: block;
+}
+
+.slides_hidden {
+  display: none;
+}
+
+/* Next & previous buttons */
+.slideshow_image_container {
+  position: relative;
+}
+
+.controls_container {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: bold;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.dot_container {
+  text-align: center;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+#prev:hover,
+#next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carrousel_image {
+  width: 100%;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #6e6e6e;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+/* .dot:hover */
+.dot_active {
+  /* background-color: #717171; */
+  background-color: white;
+}
+
+/* Fading animation */
+.fade {
+  /* -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s; */
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+/* @-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+} */
+@-webkit-keyframes fade {
+  from {
+    opacity: .1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: .1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.article_options_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.article_menu {
+  border-radius: 5px;
+  /* necesario para el border radius..? */
+}
+
+.option_title {
+  font-size: 1.2rem;
+}
+
+.option_icon {
+  width: 30px;
+}
+
+.option_text {
+  font-size: 1.7rem;
+}
+
+.article_item {
+  border-top: 1px solid #2980b9;
+  overflow: hidden;
+}
+
+.item_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 16px 20px;
+  background-color: #3498db;
+  color: white;
+}
+
+.item_options {
+  background: #333;
+  overflow: hidden;
+}
+
+.item_options > li:active {
+  background-color: #5e5e5e;
+}
+
+.option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5% 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sabores_quantity {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #6e6e6e;
+}
+
+.send_button {
+  border-radius: 500px;
+  border: none;
+  background-color: #3498db;
+  padding: 12px 20px;
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.send_button:disabled {
+  opacity: 50%;
+}
+
+.article_final {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .article_structure {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 50px;
+  }
+  .article_options_container {
+    width: 50%;
+  }
+  .article_menu {
+    width: 50%;
+  }
+  .article_structure .slideshow-container {
+    margin-bottom: 0;
+  }
+  .navbar_icon {
+    width: 25px;
+    color: white;
+    fill: white;
+  }
+  .navbar_icon_2 {
+    width: 30px;
+    color: white;
+    fill: white;
+  }
+  .navbar {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .slideshow-container {
+    width: 50%;
+    margin: 0;
+  }
+  .text_price {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .text_title .text_title_price {
+    display: block;
+  }
+  .text_price {
+    display: none;
+  }
+  .text_description_extra {
+    display: block;
+  }
+  #article_aside {
+    position: fixed;
+    z-index: 1000;
+    height: 100%;
+    width: 25%;
+    background-color: red;
+  }
+  .aside_hidden {
+    -webkit-transition: .4s;
+    transition: .4s;
+    left: -2000px;
+  }
+  .aside_shown {
+    -webkit-transition: .4s;
+    transition: .4s;
+    left: 0;
+  }
+  .article_options_container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .item_options {
+    max-height: 10em;
+  }
+}
+
+.click_transition_expand {
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 100%;
+}
+
+.click_transition_reduce {
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 80%;
+}
+
+.height_expand {
+  -webkit-transition: max-height 3s;
+  transition: max-height 3s;
+  max-height: 5000px;
+}
+
+.height_reduce {
+  -webkit-transition: max-height 1s;
+  transition: max-height 1s;
+  max-height: 0;
+}
+
+.text_hidden {
+  display: none;
+}
+
+.li_hidden {
+  display: none;
+}
+
+.icon_hidden {
+  display: none;
+}
+
+.sticky {
+  z-index: 5000;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+}
+/*# sourceMappingURL=style.css.map */

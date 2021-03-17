@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- fonts que se pueden sacar que son del selector -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+    <!-- roboto forevah -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar_search">
+            <button id="aside_btn">
+                <img src="img/icons/bars-solid.svg" class="navbar_icon">
+            </button>
+        </div>
+        <div class="navbar_logo">
+            <h1>FIGLIO PREMIUM</h1>
+        </div>
+        <div class="navbar_cart">
+            <img src="img/icons/shopping-cart-solid.svg" class="navbar_icon_2">
+            <h4 id="shopping_items">0</h4>
+        </div>
+    </header>
+    <div class="body_container">
+        <nav id="article_aside" class="aside_hidden">
+            <ul class="aside_list">
+                <li>
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Productos</a>
+                </li>
+                <li>
+                    <a href="#">Nuestros sabores</a>
+                </li>
+                <li>
+                    <a href="#">¿Cómo usar FIGLIO ONLINE?</a>
+                </li>
+                <li>
+                    <a href="#">Preguntas frecuentes</a>
+                </li>
+                <li>
+                    <a href="#">Costos de envio</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="article_container">
+
+
+            <section class="article_text">
+                <div class="text_title">
+                    <h1>1/4 kg. de Crema Helada</h1>
+                    <h1 class="text_title_price">$300</h1>
+                </div>
+                <div class="text_description">
+                    <h2 class="text_description_extra">Un cuarto de kilo de cremas heladas.</h2>
+                    <h2>Hasta 3 sabores a disposición.</h2>
+                </div>
+                <div class="text_price">
+                    <h3>$300</h3>
+                </div>
+            </section>
+
+            <div class="article_structure">
+                <div class="slideshow-container">
+                    <!-- Full-width images with number and caption text -->
+
+                    <div class="slideshow_image_container">
+
+                        <div class="mySlides fade">
+                            <!-- <div class="numbertext">1 / 3</div> -->
+                            <img src="img/cuarto1.webp" class="carrousel_image">
+                            <!-- <div class="text">Caption One</div> -->
+                        </div>
+
+                        <div class="mySlides fade">
+                            <!-- <div class="numbertext">2 / 3</div> -->
+                            <img src="img/cuarto2.webp" class="carrousel_image">
+                            <!-- <div class="text">Caption Two</div> -->
+                        </div>
+
+                        <div class="mySlides fade">
+                            <!-- <div class="numbertext">3 / 3</div> -->
+                            <img src="img/cuarto3.webp" class="carrousel_image">
+                            <!-- <div class="text">Caption Three</div> -->
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <div class="controls_container">
+                            <a id="prev">&#10094;</a>
+                            <a id="next">&#10095;</a>
+                        </div>
+                    </div>
+
+
+
+                    <!-- The dots/circles -->
+                    <div class="dot_container">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="article_options_container">
+                    <ul class="article_menu click_transition_reduce">
+                        <li id="sabores">
+                            <!-- el # hace que la pantalla salte a ese lugar -->
+                            <div class="article_item" id='sabores_nav'>
+                                <div class="item_btn">
+                                    <h4 class="option_text">Sabores</h4>
+                                    <img src="img/icons/ice-cream-solid.svg" class="option_icon">
+                                    <img src="img/icons/chevron-up-solid.svg" class="option_icon icon_hidden">
+                                </div>
+                                <h3 class="sabores_quantity text_hidden">Seleccionar maximo 3 sabores.</h3>
+                            </div>
+                            <ul class="item_options height_reduce" id="sabores_options">
+                                <!-- aca van a ir las opciones -->
+                            </ul>
+                        </li>
+                        <li id="vasitos">
+                            <div class="article_item" id='vasitos_nav'>
+                                <div class="item_btn">
+                                    <h4 class="option_text">Vasitos</h4>
+                                    <img src="img/icons/glass-whiskey-solid.svg" class="option_icon">
+                                    <img src="img/icons/chevron-up-solid.svg" class="option_icon icon_hidden">
+                                </div>
+                            </div>
+                            <ul class="item_options height_reduce" id="sabores_options">
+                                <li class="option">
+                                    <h5 class="option_title">1 vasito</h5>
+                                    <div class="option_checkbox">
+                                        <input type="checkbox" id="option_vasito_n_1">
+                                        <label for="option_vasito_n_1"></label>
+                                    </div>
+                                </li>
+                                <li class="option">
+                                    <h5 class="option_title">2 vasitos</h5>
+                                    <div class="option_checkbox">
+                                        <input type="checkbox" id="option_vasito_n_2">
+                                        <label for="option_vasito_n_2"></label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="article_final">
+                <button id="send_button" class="send_button" disabled>Añadir</button>
+            </div>
+    </div>
+    </section>
+    </div>
+    <script src="js/aside.js"></script>
+    <script src="js/carrousel.js"></script>
+    <script src="js/options_script.js"></script>
+</body>
+
+</html>
